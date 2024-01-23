@@ -291,7 +291,8 @@ Here are few rules:
 - You need to explain why you added each variable.
 
 ```{r,eval=FALSE,echo=show_code}
-lmfit_2008<- # ["your model here"] # use ames_raw_2008
+lmfit_2008<-lm(data=ames_raw_2008,SalePrice~ames_raw_2008$`Year Built`)
+broom::tidy(lmfit_2008)
 ```
 
 When you decide on your model use the following to come up with your test loss.
